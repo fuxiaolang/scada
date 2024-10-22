@@ -1,0 +1,97 @@
+﻿<Window x:Class="DESCADA.PutBattery"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DESCADA"
+        mc:Ignorable="d"
+        Title="Plateno" WindowStyle="None"  Background="Transparent" AllowsTransparency="True"
+        Height="1080" Width="1920"  WindowStartupLocation="Manual" Loaded="Window_Loaded" 
+        >
+
+    <Grid>
+        <Border Background="#000000" Opacity="0.5" Height="1080" Width="1920" />
+
+        <Grid  Height="285" Width="538"  Margin="0 100"  VerticalAlignment="Top"    HorizontalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="50" />
+                <RowDefinition  Height="45" />
+                <RowDefinition  Height="50" />
+                <RowDefinition  Height="50" />
+                <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush  ImageSource="/Resources/弹窗.png"   />
+        </Grid.Background>
+
+
+        <TextBlock Text="选择调仓目标仓位"   Margin="56 7 0 0" FontFamily="{StaticResource xinyi}"      VerticalAlignment="Top" FontSize="24" Foreground="white"/>
+        <Image Source="/Resources/关闭.png"    Stretch="None"  Margin="0,9,0,0"   VerticalAlignment="Top" HorizontalAlignment="Right" Cursor="Hand"  MouseDown="Close_MouseDown"/>
+
+
+            <StackPanel Grid.Row="1"  HorizontalAlignment="Left" Orientation="Vertical"  Margin="105 20 0 0"  >
+                <StackPanel  Orientation="Horizontal">
+                    <RadioButton Name="ValidType1" Background="Transparent" Checked="ValidType_Checked"  />
+                    <TextBlock Text="取电池"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+                    <RadioButton  Name="ValidType2" Background="Transparent"   Checked="ValidType_Checked"   Margin="9 0 0 0"/>
+                    <TextBlock Text="放电池"    FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+                    <RadioButton  Name="ValidType3"  Background="Transparent"    Checked="ValidType_Checked" IsChecked="True"  Margin="9 0 0 0"/>
+                    <TextBlock Text="取放电池"    FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel  x:Name="panelSelChargerPick"  Grid.Row="2" VerticalAlignment="Center"  HorizontalAlignment="left" Orientation="Horizontal" Margin="85 0 0 0" >
+                <TextBlock x:Name="txtSelChargerPick" Text="取电池仓位"   Margin="0 7 10 0" FontFamily="{StaticResource xinyi}"      VerticalAlignment="Top" FontSize="16" Foreground="white"/>
+                <ComboBox  x:Name="selChargerPick"  Width="327" Height="40" FontSize="15" Foreground="White"
+                      VerticalContentAlignment="Center" Background="Transparent">
+                    <ComboBoxItem>0</ComboBoxItem>
+                    <ComboBoxItem>1</ComboBoxItem>
+                    <ComboBoxItem>2</ComboBoxItem>
+                    <ComboBoxItem>3</ComboBoxItem>
+                    <ComboBoxItem>4</ComboBoxItem>
+                    <ComboBoxItem>5</ComboBoxItem>
+                    <ComboBoxItem>6</ComboBoxItem>
+                    <ComboBoxItem>7</ComboBoxItem>
+                    <ComboBoxItem>车端</ComboBoxItem>
+                    <ComboBoxItem>消防仓</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel  x:Name="panelSelChargerPut" Grid.Row="3" VerticalAlignment="Center"  HorizontalAlignment="left" Orientation="Horizontal" Margin="85 0 0 0" >
+                <TextBlock x:Name="txtSelChargerPut" Text="放电池仓位"   Margin="0 7 10 0" FontFamily="{StaticResource xinyi}"      VerticalAlignment="Top" FontSize="16" Foreground="white"/>
+                <ComboBox  x:Name="selChargerPut"  Width="327" Height="40" FontSize="15" Foreground="White"
+            VerticalContentAlignment="Center" Background="Transparent">
+                    <ComboBoxItem>0</ComboBoxItem>
+                    <ComboBoxItem>1</ComboBoxItem>
+                    <ComboBoxItem>2</ComboBoxItem>
+                    <ComboBoxItem>3</ComboBoxItem>
+                    <ComboBoxItem>4</ComboBoxItem>
+                    <ComboBoxItem>5</ComboBoxItem>
+                    <ComboBoxItem>6</ComboBoxItem>
+                    <ComboBoxItem>7</ComboBoxItem>
+                    <ComboBoxItem>车端</ComboBoxItem>
+                    <ComboBoxItem>消防仓</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="4" VerticalAlignment="Center"  HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button x:Name="btnDialogCancel" Content="忽略"   BorderThickness="0" Foreground="White"   Margin="10 0 0 0" FontSize="15"    FontFamily="{StaticResource xinyi}"  Width="95" Height="32" HorizontalAlignment="Center" VerticalAlignment="Top" Command="{Binding BtnCommand}" Click="btnDialogCancel_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resources/圆角矩形2拷贝5.png"  Stretch="Fill"></ImageBrush>
+                </Button.Background>
+            </Button>
+                <Button x:Name="btnDialogOk" Content="确认"  BorderThickness="0" Foreground="White"   Margin="10 0 0 0" FontSize="15"    FontFamily="{StaticResource xinyi}"  Width="95" Height="32" HorizontalAlignment="Center" VerticalAlignment="Top" Command="{Binding BtnCommand}" Click="btnDialogOk_Click" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resources/圆角矩形2拷贝5-1.png"  Stretch="Fill"></ImageBrush>
+                </Button.Background>
+            </Button>
+
+
+
+        </StackPanel>
+
+
+    </Grid>
+
+      </Grid>
+</Window>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Obfuscator>
+  <!--输入路径-->
+  <Var name="InPath" value="." />
+  <!--输出路径:加密混淆过的路径-->
+  <Var name="OutPath" value=".\Output" />
+  <Var name="ReuseNames" value="true" />
+  <Var name="HideStrings" value="false" />
+  <Var name="KeepPublicApi" value="true" />
+  <Var name="HidePrivateApi" value="true" />
+  <!--文件-->
+  <Module file="C:\0HM\12站端\Code\DESCADA\DESCADA\bin\Debug\net6.0-windows\DESCADA.dll" />
+</Obfuscator>

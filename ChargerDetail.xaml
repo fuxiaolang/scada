@@ -1,0 +1,416 @@
+﻿<Window x:Class="DESCADA.ChargerDetail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DESCADA"
+        mc:Ignorable="d"
+        Title="Plateno" WindowStyle="None"  Background="Transparent" AllowsTransparency="True"
+        Height="1080" Width="928"  WindowStartupLocation="Manual" Loaded="Window_Loaded" LocationChanged="Window_LocationChanged"  Deactivated="Window_Deactivated"
+       Topmost="True" >
+    <Viewbox>
+        <Grid Margin="0,0,0,0"  Grid.Row="0"  Height="1080" Width="932"  HorizontalAlignment="Left" Background="#00213F" >
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="55" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="39" />
+                <RowDefinition  Height="72" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="148*"/>
+                <ColumnDefinition Width="286*"/>
+                <ColumnDefinition Width="148*"/>
+                <ColumnDefinition Width="286*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="0" Margin="10 10 0 0"  Grid.ColumnSpan="4"  Height="38" Width="268"  HorizontalAlignment="Left">
+                <Border.Background>
+                    <ImageBrush  ImageSource="/Resources/标题装饰1.png"  />
+                </Border.Background>
+            </Border>
+
+            <TextBlock Text="{Binding ChargerID}" Grid.ColumnSpan="4"   Margin="40 10 0 0"  FontFamily="{StaticResource xinyi}"  Foreground="White" FontSize="26"  >
+            </TextBlock>
+            <TextBlock Text="号充电仓详情" Grid.ColumnSpan="4"   Margin="60 10 0 0"  FontFamily="{StaticResource xinyi}"  Foreground="White" FontSize="26"  >
+            </TextBlock>
+            <Image Source="/Resources/charge/icon/icon-关闭.png"    Stretch="None"  Grid.ColumnSpan="4"   Margin="0,9,20,0"   VerticalAlignment="Top" HorizontalAlignment="Right" Cursor="Hand"  MouseDown="Close_MouseDown"/>
+
+            <Path Stretch="Fill" Data="M0,0 L10,0 z"   Width="1828" Grid.ColumnSpan="4"  Fill="#6198DD" Grid.Row="0"
+                                       Stroke="#6198DD" Opacity="0.25" StrokeThickness="1"
+                                       HorizontalAlignment="Stretch" Margin="10,42,10,0" 
+                                       VerticalAlignment="Top"/>
+
+
+            <TextBlock  Grid.Row="1" Grid.Column="0"  Text="充电机编码："  HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="1" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0" x:Name="ChargerNo"  Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" />
+            </Grid>
+            <TextBlock  Grid.Row="1" Grid.Column="2" Text="电池编码："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="1" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"  x:Name="BattertySN"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" />
+            </Grid>
+
+            <TextBlock  Grid.Row="2" Grid.Column="0" Text="软件版本号："  HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="2" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"  x:Name="ChargerSoftVer"  Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                12.0
+                </TextBlock>
+            </Grid>
+            <TextBlock  Grid.Row="2" Grid.Column="2" Text="电池类型："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="2" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"   x:Name="BatteryType"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                -
+                </TextBlock>
+            </Grid>
+
+            <TextBlock  Grid.Row="3" Grid.Column="0" Text="通讯协议版本号："  HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="3" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"   x:Name="CommSoftVer"  Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                HB-40C
+                </TextBlock>
+            </Grid>
+            <TextBlock  Grid.Row="3" Grid.Column="2" Text="电池冷却方式："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="3" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"   x:Name="BatteryCoolMethod"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                99%
+                </TextBlock>
+            </Grid>
+
+
+            <TextBlock  Grid.Row="4" Grid.Column="0" Text="充电枪口数："  HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="4" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"   x:Name="GunNum"  Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                450V
+                </TextBlock>
+            </Grid>
+            <TextBlock  Grid.Row="4" Grid.Column="2" Text="电池额定总能量："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="4" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"   x:Name="PackPower"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                78%
+                </TextBlock>
+            </Grid>
+
+            <TextBlock  Grid.Row="5" Grid.Column="0" Text="电池充电模式："  HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="5" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"   x:Name="BmsChargeMode"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                100A
+                </TextBlock>
+            </Grid>
+            <TextBlock  Grid.Row="5" Grid.Column="2" Text="电池硬件版本号："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="5" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"    x:Name="HardVer"  Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                280kwh
+                </TextBlock>
+            </Grid>
+
+            <TextBlock  Grid.Row="6" Grid.Column="0" Text="充电机直流电压："  HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="6" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"    x:Name="ChargeU"  Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                45KW
+                </TextBlock>
+            </Grid>
+            <TextBlock  Grid.Row="6" Grid.Column="2" Text="电池软件版本号："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="6" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"   x:Name="BatSoftVer"  Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                100Ah
+                </TextBlock>
+            </Grid>
+
+            <TextBlock  Grid.Row="7" Grid.Column="0" Text="充电机直流电流："  HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="7" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"    x:Name="ChargeI"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                12,850kwh
+                </TextBlock>
+            </Grid>
+            <TextBlock  Grid.Row="7" Grid.Column="2" Text="SOH："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="7" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"    x:Name="PackSoh"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                20min
+                </TextBlock>
+            </Grid>
+
+            <TextBlock  Grid.Row="8" Grid.Column="0" Text="充电机实时功率："  HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="8" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"   x:Name="KW"  Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                380V
+                </TextBlock>
+            </Grid>
+            <TextBlock  Grid.Row="8" Grid.Column="2" Text="SOC："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="8" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"   x:Name="PackSoc"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                2-3.32V
+                </TextBlock>
+            </Grid>
+
+            <TextBlock  Grid.Row="9" Grid.Column="0" Text="本次输出电量："  HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="9" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"    x:Name="KWH"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                380V
+                </TextBlock>
+            </Grid>
+            <TextBlock  Grid.Row="9" Grid.Column="2" Text="电压："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="9" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"    x:Name="BatteryHighU"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+               19-3.19V
+                </TextBlock>
+            </Grid>
+
+            <TextBlock  Grid.Row="10" Grid.Column="0" Text="交流A相电压："  HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="10" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"  x:Name="AU"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                380V
+                </TextBlock>
+            </Grid>
+            <TextBlock  Grid.Row="10" Grid.Column="2" Text="电流："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="10" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"    x:Name="PackTtlI"  Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                5-39℃
+                </TextBlock>
+            </Grid>
+
+            <TextBlock  Grid.Row="11" Grid.Column="0" Text="交流B相电压："  HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="11" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"     Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                50A
+                </TextBlock>
+            </Grid>
+            <TextBlock  Grid.Row="11" Grid.Column="2" Text="剩余充电时间："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="11" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"    x:Name="RemainChargeTime"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                18-35℃
+                </TextBlock>
+            </Grid>
+
+            <TextBlock  Grid.Row="12" Grid.Column="0" Text="交流C相电压："  HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="12" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"    Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                50A
+                </TextBlock>
+            </Grid>
+            <TextBlock  Grid.Row="12" Grid.Column="2" Text="最高单体电压："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="12" Grid.Column="3"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"   x:Name="UnitCellUMax"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+             50A
+                </TextBlock>
+            </Grid>
+            
+            <TextBlock  Grid.Row="13" Grid.Column="0" Text="交流A相电流："  HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="13" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"    x:Name="AI"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                50A
+                </TextBlock>
+            </Grid>
+            <TextBlock  Grid.Row="13" Grid.Column="2" Text="最低单体电压："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="13" Grid.Column="3"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"   x:Name="UnitCellUMin"  Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+     50A
+                </TextBlock>
+            </Grid>
+
+            <TextBlock  Grid.Row="14" Grid.Column="0" Text="交流B相电流："  HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="14" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"      Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+               0.99
+                </TextBlock>
+            </Grid>
+            <TextBlock  Grid.Row="14" Grid.Column="2" Text="最高测点温度："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="14" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"    x:Name="UnitCellCMax"  Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+                正常
+                </TextBlock>
+            </Grid>
+
+            <TextBlock  Grid.Row="15" Grid.Column="0" Text="交流C相电流："  HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="15" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"    Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+              正常
+                </TextBlock>
+            </Grid>
+            <TextBlock  Grid.Row="15" Grid.Column="2" Text="最低测点温度："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="15" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"    x:Name="UnitCellCMin"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+              正常
+                </TextBlock>
+            </Grid>
+
+            <TextBlock  Grid.Row="16" Grid.Column="0" Text="出风口温度："  HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="16" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"    x:Name="ExitC"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+              正常
+                </TextBlock>
+            </Grid>
+            <TextBlock  Grid.Row="16" Grid.Column="2" Text="电池均衡状态："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="16" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"  x:Name="BatBalance"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+           正常
+                </TextBlock>
+            </Grid>
+
+            <TextBlock  Grid.Row="17" Grid.Column="0" Text="充电机故障状态："  HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="17" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"  x:Name="CurrentWarnMaxNo"  Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+              正常
+                </TextBlock>
+            </Grid>
+            <TextBlock  Grid.Row="17" Grid.Column="2" Text="充电连接器1温度："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="17" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"  x:Name="AGunC"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+           正常
+                </TextBlock>
+            </Grid>
+            
+            <TextBlock  Grid.Row="18" Grid.Column="0" Text="充电机气体报警："  HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="18" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"  x:Name="GunGas"  Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+              正常
+                </TextBlock>
+            </Grid>
+            <TextBlock  Grid.Row="18" Grid.Column="2" Text="充电连接器2温度："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="18" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"  x:Name="BGunC"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+           正常
+                </TextBlock>
+            </Grid>
+
+            <TextBlock  Grid.Row="19" Grid.Column="0" Text="充电机烟雾报警："  HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="19" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"  x:Name="GunSmoke"  Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+              正常
+                </TextBlock>
+            </Grid>
+            <TextBlock  Grid.Row="19" Grid.Column="2" Text="TMS工作状态："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="19" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"  x:Name="TmsWorkStatus"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+           正常
+                </TextBlock>
+            </Grid>
+
+            <TextBlock  Grid.Row="20" Grid.Column="0" Text="充电机消防预警级别："  HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="20" Grid.Column="1"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"  x:Name="FireLevel"  Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+       正常
+                </TextBlock>
+            </Grid>
+            <TextBlock  Grid.Row="20" Grid.Column="2" Text="TMS出水/进水温度："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="20" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"  x:Name="TmsEffluentC"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+           正常
+                </TextBlock>
+            </Grid>
+
+            <TextBlock  Grid.Row="21" Grid.Column="2" Text="TMS故障等级："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="21" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"  x:Name="TMSFaultLevel"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+           正常
+                </TextBlock>
+            </Grid>
+
+            <TextBlock  Grid.Row="22" Grid.Column="2" Text="电池烟雾报警："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="22" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"  x:Name="BatSmoke"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+     正常
+                </TextBlock>
+            </Grid>
+            
+            <TextBlock  Grid.Row="23" Grid.Column="2" Text="电池火警报警："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="23" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"  x:Name="BatFire"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+正常
+                </TextBlock>
+            </Grid>
+
+
+            <TextBlock  Grid.Row="24" Grid.Column="2" Text="绝缘报警："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="24" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"  x:Name="BatInsulation"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+正常
+                </TextBlock>
+            </Grid>
+            
+            <TextBlock  Grid.Row="25" Grid.Column="2" Text="电池故障等级："    HorizontalAlignment="Right"  VerticalAlignment="Center"   FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <Grid   Grid.Row="25" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Border  Background="#A9CDEF"  CornerRadius="5" Opacity="0.12"  Height="32" Width="286"  HorizontalAlignment="Left"/>
+                <TextBlock  Margin="16 0 0 0"  x:Name="BatFaultLeve"   Foreground="#FFFFFF" Background="Transparent"  VerticalAlignment="Center"   HorizontalAlignment="Left"  Width="442" FontFamily="PingFangSC"  FontSize="18" >
+正常
+                </TextBlock>
+            </Grid>
+
+            <Path Stretch="Fill" Grid.Row="26"  Data="M0,0 L10,0 z"   Width="1828" Grid.ColumnSpan="4"  Fill="#6198DD" 
+                                      Stroke="#6198DD" Opacity="0.25" StrokeThickness="1"
+                                      HorizontalAlignment="Stretch" Margin="0,0,0,0" 
+                                      VerticalAlignment="Top"/>
+            <Button x:Name="btnOK" Content="确定" IsDefault="True" Grid.Row="26" Grid.ColumnSpan="4"   BorderThickness="0" Foreground="White"   Margin="0 -25 25 0" FontSize="15"    FontFamily="{StaticResource xinyi}"  Width="95" Height="32" HorizontalAlignment="Right" VerticalAlignment="Center" Command="{Binding BtnCommand}" Click="btnOK_Click" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resources/圆角矩形2拷贝5-1.png"  Stretch="Fill"></ImageBrush>
+                </Button.Background>
+            </Button>
+
+        </Grid>
+    </Viewbox>
+</Window>

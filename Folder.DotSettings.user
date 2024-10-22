@@ -1,0 +1,8 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002FUsers_002Ffuwei_002FDocuments_002Fwork_002Fcode_002Fscada_002Fbin_002Fcomm_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002FUsers_002Ffuwei_002FDocuments_002Fwork_002Fcode_002Fscada_002Fbin_002FLaki_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002FUsers_002Ffuwei_002FDocuments_002Fwork_002Fcode_002Fscada_002Fbin_002FMySql_002EData_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002FUsers_002Ffuwei_002FDocuments_002Fwork_002Fcode_002Fscada_002Fbin_002FMySqlConnector_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002FUsers_002Ffuwei_002FDocuments_002Fwork_002Fcode_002Fscada_002Fbin_002FQYLED_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002FUsers_002Ffuwei_002FDocuments_002Fwork_002Fcode_002Fscada_002Fbin_002FWatsonTcp_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002FUsers_002Ffuwei_002FDocuments_002Fwork_002Fcode_002Fscada_002Fbin_002FWPF_005FDateTimePicker_002EUserControls_002Edll/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

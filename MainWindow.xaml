@@ -1,0 +1,158 @@
+﻿<Window x:Name="Window1" x:Class="DESCADA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DESCADA"
+        xmlns:uc="clr-namespace:DESCADA"
+        mc:Ignorable="d"
+        Title="MainWindow" WindowStyle="None" WindowState="Maximized"   Height="1080" Width="1920">
+
+    <Viewbox>
+    
+    <Grid
+  Height="1080" Width="1920" Margin="0 0 0 0" >
+        <Grid.Background>
+            <ImageBrush  ImageSource="/Resources/bg.png"   />
+     </Grid.Background>
+    
+    <Grid.RowDefinitions>
+            <RowDefinition  Height="60*" />
+      <RowDefinition Height="952*"/>
+      <RowDefinition Height="68*"/>
+    </Grid.RowDefinitions>
+
+    <!--头部内容区域-->
+    <StackPanel  VerticalAlignment="Top" Orientation="Horizontal">
+            <Image Source="/Resources/logo.png"    Stretch="Fill" Margin="24 8 0 0"/>
+    </StackPanel>
+
+        <StackPanel  VerticalAlignment="Top" Orientation="Horizontal" Margin="636 0 0 0" MouseDown="Window1_MouseDown">
+            <Button x:Name="btnMenuIndex" Content="换电首页"  Style="{StaticResource BtnState}" Cursor="Hand" BorderThickness="0"  Foreground="White"   Margin="0 0 0 0" FontSize="18"    FontFamily="{StaticResource xinyi}"  Width="145" Height="60" HorizontalAlignment="Center" VerticalAlignment="Top" Command="{Binding BtnCommand}" Click="btnMenuIndex_Click"> 
+         <Button.Background>
+            <ImageBrush ImageSource="/Resources/导航栏选中.png" Stretch="Fill"></ImageBrush>
+         </Button.Background>
+      </Button>
+            <Button x:Name="btnMenuConfig" Content="配置管理"  Style="{StaticResource BtnState}" Cursor="Hand" BorderThickness="0"  Foreground="White"   Margin="0 0 0 0" FontSize="18"    FontFamily="{StaticResource xinyi}"  Width="145" Height="60" HorizontalAlignment="Center" VerticalAlignment="Top" Command="{Binding BtnCommand}" Click="btnMenuConfig_Click"> 
+         <Button.Background>
+                    <ImageBrush  x:Name="btn2Image" Stretch="Fill"></ImageBrush>
+         </Button.Background>
+      </Button>
+            <Button x:Name="btnMenuCharge"  Click="btnMenuCharge_Click" Content="充电管理"   Style="{StaticResource BtnState}" Cursor="Hand" BorderThickness="0" Foreground="White"   Margin="0 0 0 0" FontSize="18"    FontFamily="{StaticResource xinyi}"  Width="145" Height="60" HorizontalAlignment="Center" VerticalAlignment="Top" Command="{Binding BtnCommand}"> 
+         <Button.Background>
+            <ImageBrush Stretch="Fill"></ImageBrush>
+         </Button.Background>
+      </Button>
+            <Button x:Name="btnMenuFire" Content="消防管理"  Style="{StaticResource BtnState}" Cursor="Hand"  BorderThickness="0" Foreground="White"   Margin="0 0 0 0" FontSize="18"    FontFamily="{StaticResource xinyi}"  Width="145" Height="60" HorizontalAlignment="Center" VerticalAlignment="Top" Command="{Binding BtnCommand}" Click="btnMenuFire_Click"> 
+         <Button.Background>
+            <ImageBrush Stretch="Fill"></ImageBrush>
+         </Button.Background>
+      </Button>
+            <Button x:Name="btnMenuLog" Content="事件/告警"  Style="{StaticResource BtnState}" Cursor="Hand" BorderThickness="0" Foreground="White"   Margin="0 0 0 0" FontSize="18"    FontFamily="{StaticResource xinyi}"  Width="145" Height="60" HorizontalAlignment="Center" VerticalAlignment="Top" Command="{Binding BtnCommand}" Click="btnMenuLog_Click"> 
+         <Button.Background>
+            <ImageBrush Stretch="Fill"></ImageBrush>
+         </Button.Background>
+            </Button>
+                <Button x:Name="btnMenuInquiry" Content="统计查询"  Style="{StaticResource BtnState}" Cursor="Hand" BorderThickness="0"  Foreground="White"   Margin="0 0 0 0" FontSize="18"    FontFamily="{StaticResource xinyi}"  Width="145" Height="60" HorizontalAlignment="Center" VerticalAlignment="Top" Command="{Binding BtnCommand}" Click="btnMenuInquiry_Click">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill"></ImageBrush>
+                </Button.Background>
+            </Button>
+
+                <TextBlock  x:Name="txtScadaVer" Text="1.0.0" Margin="80 0 0 0"  FontFamily="{StaticResource xinyi}"  Foreground="White" FontSize="12"  VerticalAlignment="Center" />
+                <Image   x:Name="imgNewVersion" Visibility="Hidden" MouseDown="imgNewVersion_MouseDown" Source="/Resources/NewVersion.png"  Stretch="None" VerticalAlignment="Center"  />
+                <ComboBox   x:Name="cmbUser" DropDownClosed="cmbUser_DropDownClosed"  Margin="10 16 0 10" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Style="{DynamicResource ComboBoxStyle2}" Width="126"  Height="30"  VerticalAlignment="Center"  >
+                    <ComboBoxItem Content="管理员"  HorizontalAlignment="Left" />
+                    <ComboBoxItem Content="切换账号"  HorizontalAlignment="Left" />
+                    <ComboBoxItem Content="退出登录"  HorizontalAlignment="Left" />
+                </ComboBox>
+            </StackPanel>
+        
+        <StackPanel  VerticalAlignment="Top" Orientation="Vertical"  HorizontalAlignment="Right" Width="77" Margin="0  15 40  0" >
+            <TextBlock  x:Name="txtTime"    Text="15:37:36"  Margin="0 0 0 0"  FontFamily="{StaticResource xinyi}"  HorizontalAlignment="Right" Foreground="White" FontSize="18"  />
+            <TextBlock  x:Name="txtDate"  Text="2023 10  20" Margin="0 9 5 0"  FontFamily="{StaticResource xinyi}"  HorizontalAlignment="Right" Foreground="White" FontSize="9"  />
+        </StackPanel>
+        <!--功能内容区域-->
+       <ContentControl x:Name="Page_Change"   Grid.Row="1" />
+
+
+            <!--提示区域-->
+            <Canvas>
+                <StackPanel  x:Name="moveablePanel"  Grid.Row="1" VerticalAlignment="Top"  Panel.ZIndex="2" Orientation="Vertical"  HorizontalAlignment="Center" Width="573"  Height="180" >
+            <Border x:Name="BorderInfo"   Width="573" Height="1"  Panel.ZIndex="2"  HorizontalAlignment="Center"  VerticalAlignment="Top" >
+                <Border.Background>
+                    <ImageBrush  ImageSource="/Resources/success.png"  />
+                </Border.Background>
+                <TextBlock  x:Name="txtInfo"    Text="操作提示，成功或失败..."  Margin="100 30 0 0"  FontFamily="{StaticResource xinyi}" Foreground="White" FontSize="20"  />
+
+            </Border>
+                <Border  x:Name="BorderAlert"   Width="573" Height="1"  Panel.ZIndex="2"  HorizontalAlignment="Center"  VerticalAlignment="Top" >
+                    <Border.Background>
+                        <ImageBrush  ImageSource="/Resources/告警弹窗.png"  />
+                    </Border.Background>
+                    <TextBlock  x:Name="txtAlert"    Text="告警：告警内容告警内容告警内容告警内容告警内容告..."  Margin="100 30 0 0"  FontFamily="{StaticResource xinyi}" Foreground="White" FontSize="20"  />
+
+                </Border>
+         </StackPanel>
+            </Canvas>
+
+
+            <!--底部内容区域-->
+        <StackPanel  Grid.Row="2"  VerticalAlignment="Top" Orientation="Horizontal" Margin="367 13 0 0" MouseDown="Window1_MouseDown">
+                <Image  x:Name="imgCloudStausLight"   Source="/Resources/正常.png"  Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="32" >
+      </Image>
+            <Button x:Name="bot1" Content="远程网络连接"  Style="{StaticResource BtnState}" Cursor="Hand" BorderThickness="0" Foreground="White"   Margin="0 0 0 0" FontSize="16"    FontFamily="{StaticResource xinyi}"  Width="117" Height="36" HorizontalAlignment="Center" VerticalAlignment="Top" Command="{Binding BtnCommand}" Padding="0,0,0,0"> 
+         <Button.Background>
+                        <ImageBrush x:Name="imgCloudStaus"  ImageSource="/Resources/按钮背板.png"  Stretch="Fill" Opacity="0.3"></ImageBrush>
+         </Button.Background>
+      </Button>
+  <Image Source="/Resources/arrow.png"  Stretch="None"   Margin="23 0 26 0" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="54" >
+      </Image>
+
+
+                <Image  x:Name="imgDBStausLight"  Source="/Resources/异常.png"  Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="32" >
+      </Image>
+                <Button x:Name="btnDBStaus" Content="数据库状态" Click="btnDBStaus_Click"  Style="{StaticResource BtnState}" Cursor="Hand" BorderThickness="0" Foreground="White"   Margin="0 0 0 0" FontSize="16"    FontFamily="{StaticResource xinyi}"  Width="117" Height="36" HorizontalAlignment="Center" VerticalAlignment="Top" Command="{Binding BtnCommand}"> 
+         <Button.Background>
+                        <ImageBrush  x:Name="imgDBStaus"  ImageSource="/Resources/色相饱和度1345.png"  Stretch="Fill" Opacity="0.3"></ImageBrush>
+         </Button.Background>
+      </Button>
+  <Image Source="/Resources/arrow.png"  Stretch="None"   Margin="23 0 26 0" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="54" >
+      </Image>
+
+
+                <Image x:Name="imgDeviceStatusLight"  Source="/Resources/异常.png"  Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="32" >
+      </Image>
+            <Button x:Name="btnDeviceStatus" Content="设备连接状态"  Click="btnDeviceStatus_Click"   Style="{StaticResource BtnState}" Cursor="Hand" BorderThickness="0" Foreground="White"   Margin="0 0 0 0" FontSize="16"    FontFamily="{StaticResource xinyi}"  Width="117" Height="36" HorizontalAlignment="Center" VerticalAlignment="Top" Command="{Binding BtnCommand}"> 
+         <Button.Background>
+                        <ImageBrush  x:Name="imgDeviceStatus"  ImageSource="/Resources/色相饱和度1345.png"  Stretch="Fill" Opacity="0.3"></ImageBrush>
+         </Button.Background>
+      </Button>
+      <Image Source="/Resources/arrow.png"  Stretch="None"   Margin="23 0 26 0" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="54" >
+      </Image>
+
+
+
+                <Image  x:Name="imgFaultStatusLight" Source="/Resources/正常.png"  Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="32" >
+      </Image>
+                <Button x:Name="bot4" Content="当前故障"  Click="btnMenuLog_Click"  Style="{StaticResource BtnState}" Cursor="Hand" BorderThickness="0" Foreground="White"   Margin="0 0 0 0" FontSize="16"    FontFamily="{StaticResource xinyi}"  Width="117" Height="36" HorizontalAlignment="Center" VerticalAlignment="Top" Command="{Binding BtnCommand}"> 
+         <Button.Background>
+                        <ImageBrush  x:Name="imgFaultStatus"  ImageSource="/Resources/按钮背板.png"  Stretch="Fill" Opacity="0.3"></ImageBrush>
+         </Button.Background>
+      </Button>
+      <Image Source="/Resources/arrow.png"  Stretch="None"   Margin="23 0 26 0" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="54" >
+      </Image>
+    
+        <Image Source="/Resources/正常.png"  Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="32" >
+      </Image>
+                <Button x:Name="btnSysLog"   Click="btnSysLog_Click" Content="系统日志"  Style="{StaticResource BtnState}" Cursor="Hand"  BorderThickness="0" Foreground="White"   Margin="0 0 0 0" FontSize="16"    FontFamily="{StaticResource xinyi}"  Width="117" Height="36" HorizontalAlignment="Center" VerticalAlignment="Top" Command="{Binding BtnCommand}"> 
+         <Button.Background>
+                    <ImageBrush ImageSource="/Resources/按钮背板.png"  Stretch="Fill" Opacity="0.3"></ImageBrush>
+         </Button.Background>
+      </Button>
+
+  </StackPanel>
+  </Grid>
+
+    </Viewbox>
+</Window>

@@ -1,0 +1,159 @@
+﻿<UserControl xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"  x:Class="DESCADA.Veh"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DESCADA"
+                          xmlns:localCtl="clr-namespace:DESCADA.Controls"
+
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:models="clr-namespace:MetroDemo.Models"
+ xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+                 
+
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+
+    <UserControl.Resources>
+
+        <local:AlarmTypeConverter x:Key="AlarmTypeConverter"></local:AlarmTypeConverter>
+
+        </UserControl.Resources>
+
+
+    <Grid   Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="80"/>
+            <RowDefinition Height="1002"/>
+        </Grid.RowDefinitions>
+
+        <Border  Grid.Row="0"  Background="#2493D3" Opacity="0.1" Margin="0 0 0 10">
+        </Border>
+
+        <StackPanel Grid.Row="0" HorizontalAlignment="left" Orientation="Horizontal"  Margin="20 0 0 0"  >
+            <TextBlock   Text="查询类别："  Margin="0 26 0 0"  FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+            <ComboBox  x:Name="InqType"   Margin="0 -10 0 0"  Padding="26 0 0 0"   FontFamily="PingFangSC-Medium" FontSize="18" Foreground="White" Width="212" Height="40" VerticalContentAlignment="Center"  Style="{DynamicResource ComboBoxStyle2}" SelectedIndex="1">
+                <ComboBoxItem Content="VIN"  HorizontalAlignment="Left" />
+                <ComboBoxItem Content="车牌号"  IsSelected="True"  HorizontalAlignment="Left" />
+            </ComboBox>
+            <TextBox Margin="10 -10 0 0" x:Name="txtInq" CaretBrush="white"   Padding="16 0 0 0" TextWrapping="Wrap" Width="400" Height="40" FontSize="18" Foreground="white"
+                VerticalContentAlignment="Center" BorderThickness="0"  >
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/Resources/矩形 815.png" TileMode="None" />
+                    
+                </TextBox.Background>
+            </TextBox>
+
+   
+        </StackPanel>
+     
+        <StackPanel   Grid.Row="0"  VerticalAlignment="Top"  HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button  Grid.Row="1"  x:Name="BtnInquiry" Content="查询" Style="{StaticResource BtnState}" BorderThickness="0" Foreground="White"   Margin="0,15,20,0"  FontSize="15"    FontFamily="{StaticResource xinyi}"  Width="95" Height="32" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Click="BtnInquiry_Click" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resources/圆角矩形2拷贝5-1.png"  Stretch="Fill"></ImageBrush>
+                </Button.Background>
+            </Button>
+            
+        </StackPanel>
+
+        <!--功能内容区域-->
+        <Grid Margin="0,0,0,10" Grid.Row="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="64" />
+                <RowDefinition  Height="624" />
+                <RowDefinition  Height="64" />
+            </Grid.RowDefinitions>
+
+            <Border  CornerRadius="6" Grid.RowSpan="7"  Background="#2493D3" Opacity="0.1" Margin="0 0 0 0">
+
+            </Border>
+
+            <StackPanel  Grid.Row="0"  VerticalAlignment="Top" Orientation="Horizontal" HorizontalAlignment="Left" >
+                <TextBlock  Text="注册车辆" Margin="20 18 0 0"  FontFamily="PingFangSC-Medium"    FontWeight="Bold"  Foreground="White" FontSize="19"  />
+            </StackPanel>
+
+            <StackPanel   Grid.Row="0"  VerticalAlignment="Top"  HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button  Grid.Row="5" Grid.Column="0"  x:Name="btnAddVeh" Click="btnAddVeh_Click"  Style="{StaticResource BtnState}" BorderThickness="0" Cursor="Hand"  Margin="20 16 10 0" FontSize="16"   FontFamily="PingFangSC-Medium"  Width="120" Height="32" HorizontalAlignment="Left" VerticalAlignment="Top" Command="{Binding BtnCommand}" >
+                    <Button.Background >
+                        <ImageBrush ImageSource="/Resources/Rectangle70.png" TileMode="None" />
+                    </Button.Background>
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Stretch="None" Source="/Resources/Union.png" />
+                            <TextBlock Text="添加车辆"   Margin="12 0 9 0" Foreground="#00FDFA" />
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                
+                <Image Source="/Resources/export.png"     Grid.Row="13" Grid.Column="3"   Margin="0,15,20,0"   VerticalAlignment="Top" Width="88" Height="32" Stretch="Fill" HorizontalAlignment="Left" Cursor="Hand"  MouseDown="export_MouseDown"/>
+            </StackPanel>
+
+
+            <DataGrid  x:Name="MyDataGrid" Grid.Row="1" Background="Transparent" HeadersVisibility="Column"
+           AutoGenerateColumns="False" CanUserAddRows="False" CanUserSortColumns="False" Margin="10,0,10,10"
+           VerticalGridLinesBrush="Transparent" HorizontalGridLinesBrush="Transparent"
+           BorderThickness="0" ItemsSource="{Binding GridModelList}"  FontFamily="PingFangSC-Medium"  FontSize="18px" Foreground="White" LoadingRow="MyDataGrid_LoadingRow">
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="Foreground" Value="#FFCEDCE6"/>
+                            <Setter Property="Height" Value="40"/>
+                            <Setter Property="Background">
+                                <!--值-->
+                                <Setter.Value>
+                                    <!--色刷，Opacity：透明度-->
+                                    <SolidColorBrush Color="#FF1C4869" Opacity="0.32"></SolidColorBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Height" Value="40"/>
+                            <Setter Property="BorderThickness" Value="0,1,0,1"/>
+
+                            <Setter Property="Foreground" Value="#FFFFFF"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="BorderBrush">
+                                <!--值-->
+                                <Setter.Value>
+                                    <!--色刷，Opacity：透明度-->
+                                    <SolidColorBrush Color="#A9CDEF" Opacity="0.12"></SolidColorBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DataGrid.RowStyle>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="vehid" Width="190"  Binding="{Binding VehID}"   ElementStyle="{StaticResource ContentStyle}" />
+                        <DataGridTextColumn Header="VIN" Width="190"  Binding="{Binding VIN}"   ElementStyle="{StaticResource ContentStyle}" />
+                        <DataGridTextColumn Header="车牌号" Width="180"  Binding="{Binding PlateNO}"   ElementStyle="{StaticResource ContentStyle}" />
+                        <DataGridTextColumn Header="车辆型号" Width="140"  Binding="{Binding VehModel}"   ElementStyle="{StaticResource ContentStyle}" />
+                        <DataGridTextColumn Header="运营类型" Width="140"  Binding="{Binding OperateType}"   ElementStyle="{StaticResource ContentStyle}" />
+                        <DataGridTextColumn Header="运输单位" Width="*"  Binding="{Binding TransComp}"   ElementStyle="{StaticResource ContentStyle}" />
+                        <DataGridTextColumn Header="注册时间" Width="170"    IsReadOnly="True"   Binding="{Binding RegisterTime, StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"     ElementStyle="{StaticResource ContentStyle}" />
+                        <DataGridTextColumn Header="创建时间" Width="170"   IsReadOnly="True"    Binding="{Binding CreateTime, StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"     ElementStyle="{StaticResource ContentStyle}" />
+                        <DataGridTemplateColumn  Width="110" Header="操作" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center">
+                                        <TextBlock  Text="保存"  x:Name="btnVehEidt"  Tag="{Binding vehid}" MouseDown="btnVehEidt_MouseDown" FontFamily="PingFangSC-Medium"  Foreground="#00FDFA" FontSize="16"  />
+                                        <TextBlock  Text="删除" Margin="10 0 0 0" x:Name="btnVehDel"  Tag="{Binding vehid}"  MouseDown="btnVehDel_MouseDown"  FontFamily="PingFangSC-Medium"  Foreground="#00FDFA" FontSize="16"  />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+             <localCtl:Pagination x:Name="ctlPage" Grid.Row="2" SendDataEvent="Pagination_SendDataEvent"></localCtl:Pagination>
+
+        </Grid>
+    </Grid>
+
+</UserControl>

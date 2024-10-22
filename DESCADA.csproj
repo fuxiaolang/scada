@@ -1,0 +1,580 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>   
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\arrow.png" />
+    <None Remove="Resources\bg.png" />
+    <None Remove="Resources\bigButton.png" />
+    <None Remove="Resources\bigButton1.png" />
+    <None Remove="Resources\bigButton1Sel.png" />
+    <None Remove="Resources\bigButtonSel.png" />
+    <None Remove="Resources\charge\icon\icon-BMS复位.png" />
+    <None Remove="Resources\charge\icon\icon-停用.png" />
+    <None Remove="Resources\charge\icon\icon-充电机复位.png" />
+    <None Remove="Resources\charge\icon\icon-关闭.png" />
+    <None Remove="Resources\charge\icon\icon-启用.png" />
+    <None Remove="Resources\charge\icon\icon-搜索.png" />
+    <None Remove="Resources\charge\icon\icon-鉴权.png" />
+    <None Remove="Resources\charge\logo.png" />
+    <None Remove="Resources\charge\充电仓\按钮-停止充电-默认.png" />
+    <None Remove="Resources\charge\充电仓\按钮-开始充电-禁用.png" />
+    <None Remove="Resources\charge\充电仓\按钮-开始充电-默认.png" />
+    <None Remove="Resources\charge\充电仓\电池仓_异常_选中和鼠标悬停.png" />
+    <None Remove="Resources\charge\充电仓\电池仓_异常_选中和鼠标悬浮.png" />
+    <None Remove="Resources\charge\充电仓\电池仓_异常_默认.png" />
+    <None Remove="Resources\charge\充电仓\电池仓_无电池_选中和鼠标悬停.png" />
+    <None Remove="Resources\charge\充电仓\电池仓_无电池_选中和鼠标悬浮.png" />
+    <None Remove="Resources\charge\充电仓\电池仓_无电池_默认.png" />
+    <None Remove="Resources\charge\充电仓\电池仓_无电池_鼠标悬停和选中.png" />
+    <None Remove="Resources\charge\充电仓\电池仓_电量不足_选中和鼠标悬停.png" />
+    <None Remove="Resources\charge\充电仓\电池仓_电量不足_选中和鼠标悬浮.png" />
+    <None Remove="Resources\charge\充电仓\电池仓_电量不足_默认.png" />
+    <None Remove="Resources\charge\充电仓\电池仓_电量充足_选中和鼠标悬浮.png" />
+    <None Remove="Resources\charge\充电仓\电池仓_电量充足_默认.png" />
+    <None Remove="Resources\charge\充电仓概览\充满.png" />
+    <None Remove="Resources\charge\充电仓概览\充电中.png" />
+    <None Remove="Resources\charge\充电仓概览\封仓.png" />
+    <None Remove="Resources\charge\充电仓概览\电池仓总数.png" />
+    <None Remove="Resources\charge\充电仓概览\电池总数.png" />
+    <None Remove="Resources\charge\充电仓概览\空闲.png" />
+    <None Remove="Resources\charge\充电枪\充电枪.png" />
+    <None Remove="Resources\charge\充电枪\充电连接-已连接.png" />
+    <None Remove="Resources\charge\充电枪\充电连接-未连接.png" />
+    <None Remove="Resources\charge\充电枪\开始充电-禁用.png" />
+    <None Remove="Resources\charge\充电枪\开始充电-默认.png" />
+    <None Remove="Resources\charge\充电枪\结束充电.png" />
+    <None Remove="Resources\charge\充电枪\货车侧面充电中.png" />
+    <None Remove="Resources\charge\充电枪\货车侧面待充电.png" />
+    <None Remove="Resources\charge\查看详情.png" />
+    <None Remove="Resources\charge\标题-不带文字\标题-充电仓.png" />
+    <None Remove="Resources\charge\标题-不带文字\标题-充电仓概览.png" />
+    <None Remove="Resources\charge\标题-不带文字\标题-充电告警.png" />
+    <None Remove="Resources\charge\标题-不带文字\标题-充电枪.png" />
+    <None Remove="Resources\charge\标题-不带文字\标题-电池仓详情.png" />
+    <None Remove="Resources\charge\标题-带文字\标题-充电仓.png" />
+    <None Remove="Resources\charge\标题-带文字\标题-充电仓概览.png" />
+    <None Remove="Resources\charge\标题-带文字\标题-充电告警.png" />
+    <None Remove="Resources\charge\标题-带文字\标题-充电枪1.png" />
+    <None Remove="Resources\charge\标题-带文字\标题-充电枪2.png" />
+    <None Remove="Resources\edit.png" />
+    <None Remove="Resources\export.png" />
+    <None Remove="Resources\Firereset.png" />
+    <None Remove="Resources\font\ZiTiQuanXinYiGuanHeiTi3.0-2.ttf" />
+    <None Remove="Resources\Inquiry.png" />
+    <None Remove="Resources\jiankong.png" />
+    <None Remove="Resources\leida.png" />
+    <None Remove="Resources\Logo.png" />
+    <None Remove="Resources\QRcode.png" />
+    <None Remove="Resources\Rectangle69.png" />
+    <None Remove="Resources\Rectangle70.png" />
+    <None Remove="Resources\Success.png" />
+    <None Remove="Resources\top-bg%402x.png" />
+    <None Remove="Resources\top-bg.png" />
+    <None Remove="Resources\Union.png" />
+    <None Remove="Resources\warn.png" />
+    <None Remove="Resources\warnOK.png" />
+    <None Remove="Resources\下拉箭头%402x.png" />
+    <None Remove="Resources\下拉箭头.png" />
+    <None Remove="Resources\保存记录%402x.png" />
+    <None Remove="Resources\保存记录.png" />
+    <None Remove="Resources\修改车牌按钮.png" />
+    <None Remove="Resources\修改车牌／按钮%402x.png" />
+    <None Remove="Resources\充电仓区域标题.png" />
+    <None Remove="Resources\充电仓区域／标题%402x.png" />
+    <None Remove="Resources\充电仓故障.png" />
+    <None Remove="Resources\充电仓电量足.png" />
+    <None Remove="Resources\充电仓／电量足%402x.png" />
+    <None Remove="Resources\关闭.png" />
+    <None Remove="Resources\卡车%402x.png" />
+    <None Remove="Resources\卡车.png" />
+    <None Remove="Resources\告警弹窗.png" />
+    <None Remove="Resources\图标停止.png" />
+    <None Remove="Resources\图标暂停.png" />
+    <None Remove="Resources\图标继续.png" />
+    <None Remove="Resources\图标／停止%402x.png" />
+    <None Remove="Resources\图标／暂停%402x.png" />
+    <None Remove="Resources\图标／继续%402x.png" />
+    <None Remove="Resources\圆角矩形2拷贝5-1.png" />
+    <None Remove="Resources\圆角矩形2拷贝5.png" />
+    <None Remove="Resources\复归%402x.png" />
+    <None Remove="Resources\复归.png" />
+    <None Remove="Resources\导航栏选中.png" />
+    <None Remove="Resources\导航栏／选中%402x.png" />
+    <None Remove="Resources\异常%402x.png" />
+    <None Remove="Resources\异常.png" />
+    <None Remove="Resources\弹窗.png" />
+    <None Remove="Resources\弹窗换电机.png" />
+    <None Remove="Resources\弹窗／换电机%402x.png" />
+    <None Remove="Resources\手动充电按钮选中.png" />
+    <None Remove="Resources\手动充电／按钮／选中%402x.png" />
+    <None Remove="Resources\手动操作区标题.png" />
+    <None Remove="Resources\手动操作区／标题%402x.png" />
+    <None Remove="Resources\手动操作按钮大_悬停和点击.png" />
+    <None Remove="Resources\手动操作按钮大默认.png" />
+    <None Remove="Resources\手动操作按钮大默认@2x.png" />
+    <None Remove="Resources\手动操作按钮小_悬停和点击%402x.png" />
+    <None Remove="Resources\手动操作按钮小_悬停和点击.png" />
+    <None Remove="Resources\手动操作按钮小默认.png" />
+    <None Remove="Resources\手动操作按钮／小／默认%402x.png" />
+    <None Remove="Resources\按钮背板%402x.png" />
+    <None Remove="Resources\按钮背板.png" />
+    <None Remove="Resources\换仓%402x.png" />
+    <None Remove="Resources\换仓.png" />
+    <None Remove="Resources\换电%402x.png" />
+    <None Remove="Resources\换电.png" />
+    <None Remove="Resources\换电完成 %402x.png" />
+    <None Remove="Resources\换电完成.png" />
+    <None Remove="Resources\换电通道标题.png" />
+    <None Remove="Resources\换电通道／标题%402x.png" />
+    <None Remove="Resources\故障复位%402x.png" />
+    <None Remove="Resources\故障复位.png" />
+    <None Remove="Resources\标题装饰1.png" />
+    <None Remove="Resources\正常%402x.png" />
+    <None Remove="Resources\正常.png" />
+    <None Remove="Resources\矩形 815.png" />
+    <None Remove="Resources\等待%402x.png" />
+    <None Remove="Resources\等待.png" />
+    <None Remove="Resources\系统复位%402x.png" />
+    <None Remove="Resources\系统复位.png" />
+    <None Remove="Resources\组 1585%402x%281%29.png" />
+    <None Remove="Resources\组 1585%402x%282%29.png" />
+    <None Remove="Resources\组 1585%402x.png" />
+    <None Remove="Resources\组1585(1).png" />
+    <None Remove="Resources\组1585(2).png" />
+    <None Remove="Resources\组1585.png" />
+    <None Remove="Resources\置灰%402x.png" />
+    <None Remove="Resources\置灰.png" />
+    <None Remove="Resources\背景%402x.png" />
+    <None Remove="Resources\背景.png" />
+    <None Remove="Resources\自动充电按钮选中.png" />
+    <None Remove="Resources\自动充电／按钮／选中%402x.png" />
+    <None Remove="Resources\色相饱和度1345.png" />
+    <None Remove="Resources\色相／饱和度 1345 拷贝%402x.png" />
+    <None Remove="Resources\视频监控标题.png" />
+    <None Remove="Resources\视频监控／标题%402x.png" />
+    <None Remove="Resources\轨道.png" />
+    <None Remove="Resources\进站信息按钮.png" />
+    <None Remove="Resources\重新扫牌按钮.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Firereset.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\charge\icon\icon-BMS复位.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\icon\icon-停用.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\icon\icon-充电机复位.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\icon\icon-关闭.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\icon\icon-启用.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\icon\icon-搜索.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\icon\icon-鉴权.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电仓\按钮-停止充电-默认.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电仓\按钮-开始充电-禁用.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电仓\按钮-开始充电-默认.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电仓\电池仓_异常_选中和鼠标悬浮.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电仓\电池仓_异常_默认.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电仓\电池仓_无电池_选中和鼠标悬浮.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电仓\电池仓_无电池_默认.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电仓\电池仓_无电池_鼠标悬停和选中.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电仓\电池仓_电量不足_选中和鼠标悬浮.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电仓\电池仓_电量不足_默认.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电仓\电池仓_电量充足_选中和鼠标悬浮.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电仓\电池仓_电量充足_默认.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电仓概览\电池仓总数.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电枪\充电枪.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电枪\充电连接-已连接.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.6.1" />
+    <PackageReference Include="MahApps.Metro" Version="2.4.10" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="5.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Utilities" Version="17.7.37355" />
+    <PackageReference Include="MQTTnet" Version="4.3.3.952" />
+    <PackageReference Include="MQTTnet.Extensions.ManagedClient" Version="4.3.3.952" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="ZXing.Net" Version="0.16.9" />
+    <PackageReference Include="ZXing.Net.Bindings.Windows.Compatibility" Version="0.16.12" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <Resource Include="Resources\arrow.png" />
+    <Resource Include="Resources\bg.png" />
+    <Resource Include="Resources\bigButton.png" />
+    <Resource Include="Resources\bigButton1.png" />
+    <Resource Include="Resources\bigButton1Sel.png" />
+    <Resource Include="Resources\bigButtonSel.png" />
+    <Resource Include="Resources\charge\充电仓概览\充满.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电仓概览\充电中.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电仓概览\封仓.png" />
+    <Resource Include="Resources\charge\充电仓概览\电池总数.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电仓概览\空闲.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电枪\充电连接-未连接.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电枪\开始充电-禁用.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电枪\开始充电-默认.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电枪\结束充电.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电枪\货车侧面充电中.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\充电枪\货车侧面待充电.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\查看详情.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\标题-不带文字\标题-充电仓.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\标题-不带文字\标题-充电仓概览.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\标题-不带文字\标题-充电告警.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\标题-不带文字\标题-充电枪.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\标题-不带文字\标题-电池仓详情.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\标题-带文字\标题-充电仓.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\标题-带文字\标题-充电仓概览.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\标题-带文字\标题-充电告警.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\标题-带文字\标题-充电枪1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\charge\标题-带文字\标题-充电枪2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\edit.png" />
+    <Resource Include="Resources\export.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\font\ZiTiQuanXinYiGuanHeiTi3.0-2.ttf" />
+    <Resource Include="Resources\Inquiry.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\jiankong.png" />
+    <Resource Include="Resources\leida.png" />
+    <Resource Include="Resources\Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\QRcode.png" />
+    <Resource Include="Resources\Rectangle69.png" />
+    <Resource Include="Resources\Rectangle70.png" />
+    <Resource Include="Resources\Success.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\top-bg.png" />
+    <Resource Include="Resources\top-bg@2x.png" />
+    <Resource Include="Resources\Union.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\warn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\warnOK.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\下拉箭头.png" />
+    <Resource Include="Resources\下拉箭头@2x.png" />
+    <Resource Include="Resources\保存记录.png" />
+    <Resource Include="Resources\保存记录@2x.png" />
+    <Resource Include="Resources\修改车牌按钮.png" />
+    <Resource Include="Resources\修改车牌／按钮@2x.png" />
+    <Resource Include="Resources\充电仓区域标题.png" />
+    <Resource Include="Resources\充电仓区域／标题@2x.png" />
+    <Resource Include="Resources\充电仓故障.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\充电仓电量足.png" />
+    <Resource Include="Resources\充电仓／电量足@2x.png" />
+    <Resource Include="Resources\关闭.png" />
+    <Resource Include="Resources\卡车.png" />
+    <Resource Include="Resources\卡车@2x.png" />
+    <Resource Include="Resources\告警弹窗.png" />
+    <Resource Include="Resources\图标停止.png" />
+    <Resource Include="Resources\图标／停止@2x.png" />
+    <Resource Include="Resources\图标暂停.png" />
+    <Resource Include="Resources\图标／暂停@2x.png" />
+    <Resource Include="Resources\图标继续.png" />
+    <Resource Include="Resources\图标／继续@2x.png" />
+    <Resource Include="Resources\圆角矩形2拷贝5-1.png" />
+    <Resource Include="Resources\圆角矩形2拷贝5.png" />
+    <Resource Include="Resources\复归.png" />
+    <Resource Include="Resources\复归@2x.png" />
+    <Resource Include="Resources\导航栏选中.png" />
+    <Resource Include="Resources\导航栏／选中@2x.png" />
+    <Resource Include="Resources\异常.png" />
+    <Resource Include="Resources\异常@2x.png" />
+    <Resource Include="Resources\弹窗.png" />
+    <Resource Include="Resources\弹窗换电机.png" />
+    <Resource Include="Resources\弹窗／换电机@2x.png" />
+    <Resource Include="Resources\手动充电按钮选中.png" />
+    <Resource Include="Resources\手动充电／按钮／选中@2x.png" />
+    <Resource Include="Resources\手动操作区标题.png" />
+    <Resource Include="Resources\手动操作区／标题@2x.png" />
+    <Resource Include="Resources\手动操作按钮大_悬停和点击.png" />
+    <Resource Include="Resources\手动操作按钮大默认.png" />
+    <Resource Include="Resources\手动操作按钮大默认%402x.png" />
+    <Resource Include="Resources\手动操作按钮小_悬停和点击.png" />
+    <Resource Include="Resources\手动操作按钮小_悬停和点击@2x.png" />
+    <Resource Include="Resources\手动操作按钮小默认.png" />
+    <Resource Include="Resources\手动操作按钮／小／默认@2x.png" />
+    <Resource Include="Resources\按钮背板.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\按钮背板@2x.png" />
+    <Resource Include="Resources\换仓.png" />
+    <Resource Include="Resources\换仓@2x.png" />
+    <Resource Include="Resources\换电.png" />
+    <Resource Include="Resources\换电@2x.png" />
+    <Resource Include="Resources\换电完成.png" />
+    <Resource Include="Resources\换电完成 @2x.png" />
+    <Resource Include="Resources\换电通道标题.png" />
+    <Resource Include="Resources\换电通道／标题@2x.png" />
+    <Resource Include="Resources\故障复位.png" />
+    <Resource Include="Resources\故障复位@2x.png" />
+    <Resource Include="Resources\标题装饰1.png" />
+    <Resource Include="Resources\正常.png" />
+    <Resource Include="Resources\正常@2x.png" />
+    <Resource Include="Resources\矩形 815.png" />
+    <Resource Include="Resources\等待.png" />
+    <Resource Include="Resources\等待@2x.png" />
+    <Resource Include="Resources\系统复位.png" />
+    <Resource Include="Resources\系统复位@2x.png" />
+    <Resource Include="Resources\组1585%281%29.png" />
+    <Resource Include="Resources\组1585%282%29.png" />
+    <Resource Include="Resources\组1585.png" />
+    <Resource Include="Resources\组 1585@2x(1).png" />
+    <Resource Include="Resources\组 1585@2x(2).png" />
+    <Resource Include="Resources\组 1585@2x.png" />
+    <Resource Include="Resources\置灰.png" />
+    <Resource Include="Resources\置灰@2x.png" />
+    <Resource Include="Resources\背景.png" />
+    <Resource Include="Resources\背景@2x.png" />
+    <Resource Include="Resources\自动充电按钮选中.png" />
+    <Resource Include="Resources\自动充电／按钮／选中@2x.png" />
+    <Resource Include="Resources\色相饱和度1345.png" />
+    <Resource Include="Resources\色相／饱和度 1345 拷贝@2x.png" />
+    <Resource Include="Resources\视频监控标题.png" />
+    <Resource Include="Resources\视频监控／标题@2x.png" />
+    <Resource Include="Resources\轨道.png" />
+    <Resource Include="Resources\进站信息按钮.png" />
+    <Resource Include="Resources\重新扫牌按钮.png" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <Compile Update="DialogWarn.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Dialog3.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="login.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Fire.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Inquiry\Battery.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Inquiry\Veh.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Inquiry\ChargeState.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Inquiry\BatteryRecord.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Inquiry\UnitRecord.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Inquiry\ChargeRecord.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Inquiry\SwitchRecord.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Alarm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Inquiry\Inquiry.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Config.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ConfigOper.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Dialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ChargerDetail.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PutBattery.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SelCharger .xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Charge.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="QRCode.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <Folder Include="Resources\voice\" />
+  </ItemGroup>
+
+
+
+  
+
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <None Update="config1.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\QYLED.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>		
+<None Include="stationconfig.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <Reference Include="comm">
+      <HintPath>bin\comm.dll</HintPath>
+    </Reference>
+    <Reference Include="Laki">
+      <HintPath>bin\Laki.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>bin\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlConnector">
+      <HintPath>bin\MySqlConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="WatsonTcp">
+      <HintPath>bin\WatsonTcp.dll</HintPath>
+    </Reference>
+    <Reference Include="WPF_DateTimePicker.UserControls">
+      <HintPath>bin\WPF_DateTimePicker.UserControls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

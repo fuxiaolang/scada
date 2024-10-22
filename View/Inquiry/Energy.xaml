@@ -1,0 +1,304 @@
+﻿<UserControl xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"  x:Class="DESCADA.Energy"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DESCADA"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:models="clr-namespace:MetroDemo.Models"
+ xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+                 
+
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+
+    <UserControl.Resources>
+
+        <local:ChargerStatusConverter x:Key="ChargerStatusConverter"></local:ChargerStatusConverter>
+        <local:GunWorkStatusConverter x:Key="GunWorkStatusConverter"></local:GunWorkStatusConverter>
+    </UserControl.Resources>
+
+    <Grid   Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="80"/>
+            <RowDefinition Height="162"/>
+            <RowDefinition Height="594*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="614*" />
+            <ColumnDefinition  Width="654*" />
+            <ColumnDefinition  Width="614*" />
+        </Grid.ColumnDefinitions>
+
+        <Border  Grid.Row="0"  Grid.ColumnSpan="3" Background="#2493D3" Opacity="0.1" Margin="0 0 0 10">
+
+        </Border>
+
+        <StackPanel Grid.Row="0"   Grid.ColumnSpan="3" HorizontalAlignment="left" Orientation="Horizontal"  Margin="20 0 0 0"  >
+
+
+            <TextBlock   Text="统计区间："   Margin="0 26 0 0"  FontFamily="PingFangSC-Medium"  Foreground="#CEDCE6" FontSize="16"  />
+
+
+
+            <mah:DateTimePicker x:Name="StartTime" Height="40"
+ HorizontalContentAlignment="Stretch"
+ mah:TextBoxHelper.ClearTextButton="True"
+ mah:TextBoxHelper.UseFloatingWatermark="True"
+ mah:TextBoxHelper.Watermark="开始时间"   Foreground="White"
+                           
+
+             >
+                <mah:DateTimePicker.Background>
+                    <ImageBrush ImageSource="/Resources/矩形 815.png" TileMode="None" />
+                </mah:DateTimePicker.Background>
+            </mah:DateTimePicker>
+            <TextBlock   Text="—"    FontFamily="PingFangSC-Medium"  Margin="2,0,2,0" VerticalAlignment="Center" Foreground="#CEDCE6" FontSize="16"  />
+            <mah:DateTimePicker x:Name="EndTime" Height="40"
+ HorizontalContentAlignment="Stretch"
+ mah:TextBoxHelper.ClearTextButton="True"
+ mah:TextBoxHelper.UseFloatingWatermark="True"
+ mah:TextBoxHelper.Watermark="结束时间"    Foreground="White"
+                                
+                                >
+                <mah:DateTimePicker.Background>
+                    <ImageBrush ImageSource="/Resources/矩形 815.png" TileMode="None" />
+                </mah:DateTimePicker.Background>
+            </mah:DateTimePicker>
+
+
+        </StackPanel>
+
+        <StackPanel   Grid.Row="0"   Grid.ColumnSpan="3"   VerticalAlignment="Top"  HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button  Grid.Row="1"  x:Name="BtnInquiry" Content="查询" Style="{StaticResource BtnState}" BorderThickness="0" Foreground="White"   Margin="0,15,20,0"  FontSize="15"    FontFamily="{StaticResource xinyi}"  Width="95" Height="32" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Click="BtnInquiry_Click" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resources/圆角矩形2拷贝5-1.png"  Stretch="Fill"></ImageBrush>
+                </Button.Background>
+            </Button>
+
+        </StackPanel>
+
+        <!--汇总-->
+        <!--全站汇总-->
+
+
+        <Grid Grid.Row="1"  Margin="0 10 0 20">
+            <Border  Grid.Row="0"  CornerRadius="6"  Background="#FF87A8C9" Opacity="0.1" Margin="0 0 0 0">
+            </Border>
+            <Border   Grid.Row="0"  CornerRadius="6"   Opacity="1"  BorderThickness="1"  Margin="0 0 0 0">
+                <Border.BorderBrush>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#A9CDEF" Offset="0.45"/>
+                        <GradientStop Color="#A9CDEF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+            </Border>
+
+            <StackPanel  Grid.Row="0"  Grid.Column="0"  VerticalAlignment="Top" Orientation="Vertical" HorizontalAlignment="Left" >
+                <TextBlock Text="全站（估）汇总" Margin="20 18 0 0"  FontFamily="PingFangSC-Semibold"      Foreground="White" FontSize="16"  />
+                <TextBlock  x:Name="txtTotal1"   Text="---" Margin="20 18 0 0"  FontFamily="PingFangSC-Semibold"     Foreground="White" FontSize="30"  />
+                <TextBlock  Text="充电汇总+非充电用电有功电能" Margin="20 18 0 0"  FontFamily="PingFangSC-Regular"     Foreground="White" FontSize="16"  />
+            </StackPanel>
+            <StackPanel   Grid.Row="0"   Grid.Column="0"  VerticalAlignment="Top"  HorizontalAlignment="Right" Orientation="Horizontal" Margin="0 23 16 0">
+                <Image Source="/Resources/IconTotal.png"   Margin="0 0 0 0"    Width="48" Height="48" />
+            </StackPanel>
+        </Grid>
+
+        <Grid  Grid.Row="1"   Grid.Column="1"  Margin="20 10 20 20">
+            <Border  CornerRadius="6"  Background="#FF87A8C9" Opacity="0.1" Margin="0 0 0 0">
+            </Border>
+            <Border   Grid.Row="0"  Grid.Column="1"   CornerRadius="6"   Opacity="1"  BorderThickness="1"  Margin="0 0 0 0">
+                <Border.BorderBrush>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#A9CDEF" Offset="0.45"/>
+                        <GradientStop Color="#A9CDEF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+            </Border>
+            <StackPanel    VerticalAlignment="Top" Orientation="Vertical" HorizontalAlignment="Left" >
+                <TextBlock Text="充电能耗汇总" Margin="20 18 0 0"  FontFamily="PingFangSC-Semibold"      Foreground="White" FontSize="16"  />
+                <TextBlock  x:Name="txtTotal2"   Text="---" Margin="20 18 0 0"  FontFamily="PingFangSC-Semibold"     Foreground="White" FontSize="30"  />
+                <TextBlock  Text="所有枪口区间统计值之和" Margin="20 18 0 0"  FontFamily="PingFangSC-Regular"     Foreground="White" FontSize="16"  />
+            </StackPanel>
+            <StackPanel      VerticalAlignment="Top"  HorizontalAlignment="Right" Orientation="Horizontal" Margin="0 23 16 0">
+                <Image Source="/Resources/IconTotal.png"   Margin="0 0 0 0"    Width="48" Height="48" />
+            </StackPanel>
+        </Grid>
+
+        <Grid  Grid.Row="1"   Grid.Column="2"   Margin="0 10 0 20">
+            <Border  CornerRadius="6"  Background="#FF87A8C9" Opacity="0.1" Margin="0 0 0 0">
+            </Border>
+            <Border   Grid.Row="0"  Grid.Column="1"   CornerRadius="6"   Opacity="1"  BorderThickness="1"  Margin="0 0 0 0">
+                <Border.BorderBrush>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#A9CDEF" Offset="0.45"/>
+                        <GradientStop Color="#A9CDEF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+            </Border>
+            <StackPanel    VerticalAlignment="Top" Orientation="Vertical" HorizontalAlignment="Left" >
+                <TextBlock Text="非充电有功能耗汇总" Margin="20 18 0 0"  FontFamily="PingFangSC-Semibold"      Foreground="White" FontSize="16"  />
+                <TextBlock  x:Name="txtTotal3"   Text="---" Margin="20 18 0 0"  FontFamily="PingFangSC-Semibold"     Foreground="White" FontSize="30"  />
+                <TextBlock  Text="所有非充电用电有功电能统计值之和" Margin="20 18 0 0"  FontFamily="PingFangSC-Regular"     Foreground="White" FontSize="16"  />
+            </StackPanel>
+            <StackPanel      VerticalAlignment="Top"  HorizontalAlignment="Right" Orientation="Horizontal" Margin="0 23 16 0">
+                <Image Source="/Resources/IconTotal.png"   Margin="0 0 0 0"    Width="48" Height="48" />
+            </StackPanel>
+        </Grid>
+
+
+        <!--充电机-->
+        <Grid Margin="0,0,20,0" Grid.Row="2" Grid.ColumnSpan="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="60" />
+                <RowDefinition  Height="450*" />
+            </Grid.RowDefinitions>
+
+            <Border  CornerRadius="6" Grid.RowSpan="7" Background="#2493D3" Opacity="0.1" Margin="0 0 0 0">
+            </Border>
+
+
+            <StackPanel  Grid.Row="0"  VerticalAlignment="Top" Orientation="Horizontal" HorizontalAlignment="Left" >
+                <TextBlock  Text="充电能耗明细" Margin="20 18 0 0"  FontFamily="PingFangSC-Medium"     Foreground="White" FontSize="16"  />
+            </StackPanel>
+
+            <StackPanel   Grid.Row="0"  VerticalAlignment="Top"  HorizontalAlignment="Right" Orientation="Horizontal">
+                <Image Source="/Resources/export.png"     Grid.Row="13" Grid.Column="3"   Margin="0,15,20,0"   VerticalAlignment="Top" Width="88" Height="32" Stretch="Fill" HorizontalAlignment="Left" Cursor="Hand"  MouseDown="export_MouseDown"/>
+            </StackPanel>
+
+
+            <DataGrid  x:Name="MyDataGrid" Grid.Row="1" Background="Transparent" HeadersVisibility="Column"
+           AutoGenerateColumns="False" CanUserAddRows="False"  IsReadOnly="True" Margin="10,0,10,0"
+           VerticalGridLinesBrush="Transparent" HorizontalGridLinesBrush="Transparent"
+           BorderThickness="0" ItemsSource="{Binding GridModelList}"  FontFamily="PingFangSC-Medium"  FontSize="18px" Foreground="White">
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="Foreground" Value="#FFCEDCE6"/>
+                            <Setter Property="Height" Value="40"/>
+                            <Setter Property="Background">
+                                <!--值-->
+                                <Setter.Value>
+                                    <!--色刷，Opacity：透明度-->
+                                    <SolidColorBrush Color="#FF1C4869" Opacity="0.32"></SolidColorBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Height" Value="40"/>
+                            <Setter Property="BorderThickness" Value="0,1,0,1"/>
+
+                            <Setter Property="Foreground" Value="#FFFFFF"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="BorderBrush">
+                                <!--值-->
+                                <Setter.Value>
+                                    <!--色刷，Opacity：透明度-->
+                                    <SolidColorBrush Color="#A9CDEF" Opacity="0.12"></SolidColorBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DataGrid.RowStyle>
+
+                    <DataGrid.Columns>
+
+
+                        <DataGridTextColumn Header="充电机号" Width="140"  Binding="{Binding chargerno}"   ElementStyle="{StaticResource ContentStyle}" />
+                        <DataGridTextColumn Header="枪口号" Width="533.5"  Binding="{Binding gunno}"   ElementStyle="{StaticResource ContentStyle}" />
+                        <DataGridTextColumn Header="统计区间能耗（直流）（Kwh）" Width="553.5"  Binding="{Binding CurrentMeterNum}"   ElementStyle="{StaticResource ContentStyle}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+
+        </Grid>
+
+        <!--非充电-->
+        <Grid Margin="0,0,0,0" Grid.Row="2" Grid.Column="2"  >
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="56" />
+                <RowDefinition  Height="132" />
+                <RowDefinition  Height="132" />
+                <RowDefinition  Height="132" />
+                <RowDefinition  Height="132" />
+                <RowDefinition  Height="40" />
+            </Grid.RowDefinitions>
+        
+            <Grid.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontSize" Value="30"></Setter>
+                    <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                    <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                </Style>
+                <Style TargetType="Border">
+                    <Setter Property="BorderBrush" Value="#FF183C5A"></Setter>
+                    <Setter Property="BorderThickness" Value="1"></Setter>
+                </Style>
+            </Grid.Resources>
+            
+            <Border  CornerRadius="6" Grid.RowSpan="7" Background="#2493D3" Opacity="0.1" Margin="0 0 0 0">
+            </Border>
+
+            <StackPanel  Grid.Row="0"  VerticalAlignment="Top" Orientation="Horizontal" HorizontalAlignment="Left" >
+                <TextBlock  Text="非充电能耗明细" Margin="20 18 0 0"  FontFamily="PingFangSC-Medium"     Foreground="White" FontSize="16"  />
+            </StackPanel>
+
+            <Grid Grid.Row="1"  Margin="0 0 0 20">
+                <Border  Grid.Row="0"  CornerRadius="6"  Background="#FF87A8C9" Opacity="0.1" Margin="20 0 20 0">
+                </Border>
+                <StackPanel  Grid.Row="0"  Grid.Column="0"  VerticalAlignment="Top" Orientation="Vertical" HorizontalAlignment="Left" >
+                    <TextBlock Text="吸收（用电）有功电能" Margin="40 29 0 0"  FontFamily="PingFangSC-Regular"   HorizontalAlignment="Left"     Foreground="White" FontSize="18"  />
+                    <TextBlock   Text="kwh" Margin="40 10 0 0"  FontFamily="PingFangSC-Regular"  HorizontalAlignment="Left"   Foreground="White" FontSize="16"  />
+                </StackPanel>
+                <StackPanel   Grid.Row="0"   Grid.Column="0"  VerticalAlignment="Top"  HorizontalAlignment="Right" Orientation="Horizontal" Margin="0 23 36 0">
+                    <TextBlock  x:Name="txtDetail1"   Text="---" Grid.Row="3" Margin="20 18 0 0"  FontFamily="PingFangSC-Medium"     Foreground="White" FontSize="18"  />
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="2"  Margin="0 0 0 20">
+                <Border  Grid.Row="0"  CornerRadius="6"  Background="#FF87A8C9" Opacity="0.1" Margin="20 0 20 0">
+                </Border>
+                <StackPanel  Grid.Row="0"  Grid.Column="0"  VerticalAlignment="Top" Orientation="Vertical" HorizontalAlignment="Left" >
+                    <TextBlock Text="释放（放电）有功电能" Margin="40 29 0 0"  FontFamily="PingFangSC-Regular"   HorizontalAlignment="Left"     Foreground="White" FontSize="18"  />
+                    <TextBlock  Text="kwh" Margin="40 10 0 0"  FontFamily="PingFangSC-Regular"  HorizontalAlignment="Left"   Foreground="White" FontSize="16"  />
+                </StackPanel>
+                <StackPanel   Grid.Row="0"   Grid.Column="0"  VerticalAlignment="Top"  HorizontalAlignment="Right" Orientation="Horizontal" Margin="0 23 36 0">
+                    <TextBlock   x:Name="txtDetail2"  Text="---" Grid.Row="3" Margin="20 18 0 0"  FontFamily="PingFangSC-Medium"     Foreground="White" FontSize="18"  />
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="3"  Margin="0 0 0 20">
+                <Border  Grid.Row="0"  CornerRadius="6"  Background="#FF87A8C9" Opacity="0.1" Margin="20 0 20 0">
+                </Border>
+                <StackPanel  Grid.Row="0"  Grid.Column="0"  VerticalAlignment="Top" Orientation="Vertical" HorizontalAlignment="Left" >
+                    <TextBlock Text="感性无功电能" Margin="40 29 0 0"  FontFamily="PingFangSC-Regular"   HorizontalAlignment="Left"     Foreground="White" FontSize="18"  />
+                    <TextBlock  Text="kvarh" Margin="40 10 0 0"  FontFamily="PingFangSC-Regular"  HorizontalAlignment="Left"   Foreground="White" FontSize="16"  />
+                </StackPanel>
+                <StackPanel   Grid.Row="0"   Grid.Column="0"  VerticalAlignment="Top"  HorizontalAlignment="Right" Orientation="Horizontal" Margin="0 23 36 0">
+                    <TextBlock   x:Name="txtDetail3"  Text="---" Grid.Row="3" Margin="20 18 0 0"  FontFamily="PingFangSC-Medium"     Foreground="White" FontSize="18"  />
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="4"  Margin="0 0 0 20">
+                <Border  Grid.Row="0"  CornerRadius="6"  Background="#FF87A8C9" Opacity="0.1" Margin="20 0 20 0">
+                </Border>
+                <StackPanel  Grid.Row="0"  Grid.Column="0"  VerticalAlignment="Top" Orientation="Vertical" HorizontalAlignment="Left" >
+                    <TextBlock Text="容性无功电能" Margin="40 29 0 0"  FontFamily="PingFangSC-Regular"   HorizontalAlignment="Left"     Foreground="White" FontSize="18"  />
+                    <TextBlock  Text="kvarh" Margin="40 10 0 0"  FontFamily="PingFangSC-Regular"  HorizontalAlignment="Left"   Foreground="White" FontSize="16"  />
+                </StackPanel>
+                <StackPanel   Grid.Row="0"   Grid.Column="0"  VerticalAlignment="Top"  HorizontalAlignment="Right" Orientation="Horizontal" Margin="0 23 36 0">
+                    <TextBlock   x:Name="txtDetail4"  Text="---" Grid.Row="3" Margin="20 18 0 0"  FontFamily="PingFangSC-Medium"     Foreground="White" FontSize="18"  />
+                </StackPanel>
+            </Grid>
+
+
+
+
+        </Grid>
+
+    </Grid>
+
+</UserControl>
